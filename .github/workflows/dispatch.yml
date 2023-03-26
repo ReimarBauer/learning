@@ -1,6 +1,4 @@
-- name: Workflow Dispatch
-  # You may pin to the exact commit or the version.
-  # uses: benc-uk/workflow-dispatch@798e70c97009500150087d30d9f11c5444830385
+name: Workflow Dispatch
   uses: benc-uk/workflow-dispatch@v1.2.2
   with:
     # Name, filename or ID of workflow to run
