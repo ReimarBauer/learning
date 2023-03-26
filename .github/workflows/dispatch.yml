@@ -2,15 +2,18 @@ name: learning
 jobs:
   dispatch:
   runs-on: ubuntu-latest
-    uses: benc-uk/workflow-dispatch@v1.2.2
-    with:
-      # Name, filename or ID of workflow to run
-      workflow: say hello
-      # GitHub token with repo write access, only required if the workflow is in a different repository
-      token: # optional, default is ${{ github.token }}
-      # Inputs to pass to the workflow, must be a JSON string
-      inputs: # optional
-      # The reference can be a branch, tag, or a commit SHA
-      ref: main
-      # Repo owner & name, slash separated, only set if invoking a workflow in a different repo
-      repo: ReimarBauer/example
+  steps:
+  - uses: actions/checkout@v3
+  - name: trying dispatch
+      uses: benc-uk/workflow-dispatch@v1.2.2
+      with:
+        # Name, filename or ID of workflow to run
+        workflow: say hello
+        # GitHub token with repo write access, only required if the workflow is in a different repository
+        token: # optional, default is ${{ github.token }}
+        # Inputs to pass to the workflow, must be a JSON string
+        inputs: # optional
+        # The reference can be a branch, tag, or a commit SHA
+        ref: main
+        # Repo owner & name, slash separated, only set if invoking a workflow in a different repo
+        repo: ReimarBauer/example
